@@ -76,8 +76,8 @@ function spritesmith(params, callback) {
 
         // Add the item with padding to our layer
         layer.addItem({
-          width: width + padding,
-          height: height + padding,
+          width: width + (width % 2) + padding,
+          height: height + (height % 2) + padding,
           meta: meta
         });
       });
@@ -100,8 +100,8 @@ function spritesmith(params, callback) {
         coordinates[name] = {
           x: item.x,
           y: item.y,
-          width: meta.actualWidth,
-          height: meta.actualHeight
+          width: meta.actualWidth + (meta.actualWidth % 2),
+          height: meta.actualHeight + (meta.actualHeight % 2)
         };
       });
 
